@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+
+        <meta charset="utf-8">
+        
+    </head>
+    <body>
+        <nav class="navbar text-center navbar-inverse bg-inverse">
+            <a class="navbar-brand" href="#">Simple Simon</a>
+            <div class="btn-set" data-toggle="modal" data-target="#my-modal">
+                        <p>Settings</p>
+                        </div>
+        </nav>
+
+        <div class="container">
+          
+          <main>
+          
+            <div id="board">
+                <div class="row">
+                    <div id="scoreAlert"></div>
+                </div>
+                <div class="row valign-wrapper">
+                  <div id=1 class="box col s4 " style="background-color:blue; "></div>
+                  <div id=2 class="box col s4 " style="background-color:red;"></div>
+                </div>  
+                <div class="contatiner" style="margin: auto; text-align: center;">
+                   <p id="counterBox">0</p>
+                </div>
+                
+                <div class="row valign-wrapper">
+                  <div id=3 class="box col s4 " style="background-color:yellow;"></div>
+                  <div id=4 class="box col s4" style="background-color:green;"></div>
+                </div>
+
+          </div>
+          
+            </main>
+            <div class="modal fade" id="my-modal" role="dialog" arialabeledby="myModalLabel">
+                <div class="modal-dialog" role='document'>
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <div class="modal-title" style="text-color: black"><h5 style="color: black;">Settings</h5></div>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+                        </div>
+                        <div class="modal-body">
+                            <input id="start" type="button" class="button"value="Start">
+                            <hr>
+                            <input id="reset" type="button" class="button" value="Reset">
+                            <hr>
+                            <p id="on" class="btn btn-danger" onclick="onOff(this)">Off</p>
+                            <hr>
+                            <h5 style="color: black;">Strict: <p id="strict" class="btn btn-danger" onclick="onOff(this)">Off</p></h5>
+                        <div class="btn-sett" data-toggle="modal" data-target="#my-modal">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                        </div>
+                        
+                    </div>
+                    </div>
+                    
+            </div>
+        </div>
+        <script src="jquery-3.2.1.min.js"></script>
+        <script src="scripts.js"></script>
+        
+        
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    </body>
+</html>

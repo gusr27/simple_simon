@@ -20,6 +20,8 @@ let currentGame={
     on: false,
 	hard: false
 }
+
+
 function changeButton(ele, state){
     if(!state){
         $(ele).html("On").removeClass("btn-danger").addClass("active btn-success");
@@ -59,10 +61,11 @@ function onOff(ele){
     
     
 }
+
+
 function clearGame(){
-	
-    $("#counterBox").innerHtml = 0;
 	currentGame.counter = 0;
+    $("#counterBox").html(currentGame.counter);
 	currentGame.computerMove = [];
 	currentGame.playerMove = [];
     document.getElementById("scoreAlert").style.display="hidden";
@@ -75,13 +78,17 @@ function clearPlayer(){
 function checkPick(){
 	if(currentGame.playerMove[currentGame.counter] == currentGame.computerMove[currentGame.counter]){
 		currentGame.counter++;
+        $("#scoreAlert").html("");
 		
 	}
 	else{
 		document.getElementById("scoreAlert").innerHTML='<div class="alert alert-danger" role="alert"><strong>Wrong! Try Again!</div>';
-		clearPlayer();
+		currentGame.counter = 0;
+        clearPlayer();
 		lightBoard();
-        
+        if(currentGame.hard){
+            clearGame();
+        }
 		//clearGame();
 		//clearPlayer();
 	}
@@ -89,7 +96,7 @@ function checkPick(){
 	if(currentGame.counter == currentGame.computerMove.length){
 	  $("#counterBox").html(currentGame.counter);
 		currentGame.counter = 0;
-        document.getElementById("scoreAlert").innerHTML='<div class="alert alert-success" role="alert">Good job, keep it up!</div>';
+        document.getElementById("scoreAlert").innerHTML='<div class="alert alert-success" role="alert">Good job, keep it up! Only '+ (20 -currentGame.computerMove.length)+' more to go!</div>';
 		clearPlayer();
 		generateMove();
 	}
@@ -153,18 +160,12 @@ $("#start").click(function(){
 $("#reset").click(function(){
 	clearGame();
     clearInterval(moving);
-	currentGame.highScore = 0;
+	
 });
-/*
-$("#on").click(function(){
-   if(this.ariapressed = "true"){
-       currentGame.on = true;
-   }
-   else{
-       currentGame.on = false;
-       clearGame();
-       clearPlayer();
-       
-   }
-});*/
+    $(function () {
+  $('[data-toggle="tooltip"]').tooltip({
+      trigger : 'hover'
+  })
+})
+    
 });

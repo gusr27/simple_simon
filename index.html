@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html>
     <head>
         <link rel="stylesheet" href="styles.css">
@@ -10,10 +11,12 @@
     </head>
     <body>
         <nav class="navbar text-center navbar-inverse bg-inverse">
-            <a class="navbar-brand" href="#">Simple Simon</a>
+            <a class="navbar-brand" href="#">Simple Simon </a>
+            
             <div class="btn-set" data-toggle="modal" data-target="#my-modal">
-                        <p>Settings</p>
+                        <p>Options</p>
                         </div>
+					<a href="https://codepen.io/grich27/full/vxgLXG/" style="text-decoration: none; color: white;">By Gus Richardson</a>
         </nav>
 
         <div class="container">
@@ -28,8 +31,8 @@
                   <div id=1 class="box col s4 " style="background-color:blue; "></div>
                   <div id=2 class="box col s4 " style="background-color:red;"></div>
                 </div>  
-                <div class="contatiner" style="margin: auto; text-align: center;">
-                   <p id="counterBox">0</p>
+                <div id="counterBox" class="contatiner" style="margin: auto; text-align: center;">
+                   <p ></p>
                 </div>
                 
                 <div class="row valign-wrapper">
@@ -41,22 +44,25 @@
           
             </main>
             <div class="modal fade" id="my-modal" role="dialog" arialabeledby="myModalLabel">
-                <div class="modal-dialog" role='document'>
+                <div class="modal-dialog modal-sm" role='document'>
                     <div class="modal-content">
-                        <div class="modal-header">
-                            <div class="modal-title" style="text-color: black"><h5 style="color: black;">Settings</h5></div>
+                        <div class="modal-header ">
+                            <div class="modal-title text-center" style="text-color: black"><h5 style="color: black;">Options</h5></div>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
                         </div>
                         <div class="modal-body">
-                            <input id="start" type="button" class="button"value="Start">
-                            <hr>
-                            <input id="reset" type="button" class="button" value="Reset">
-                            <hr>
-                            <p id="on" class="btn btn-danger" onclick="onOff(this)">Off</p>
-                            <hr>
-                            <h5 style="color: black;">Strict: <p id="strict" class="btn btn-danger" onclick="onOff(this)">Off</p></h5>
+                            <div class="text-center"> 
+                                <input id="start" type="button" class="button"value="Start">
+                            
+                                <input id="reset" type="button" class="button" value="Reset" style="margin:auto;">
+                                <hr>
+                                <h5 style="color:black;">Game ON/OFF: <p id="on" class="btn btn-danger" onclick="onOff(this)">Off</p></h5> 
+                                <hr>
+                            <h5 style="color: black;">Hard Mode <button class="btn" type="button" data-toggle="tooltip" data-placement="right"  title="Game will reset if a mistake is made."style="padding: .25em; background: transparent;">?</button> : <p id="strict" class="btn btn-danger" onclick="onOff(this)">Off</p></h5>
+                            </div>
+                            
                         <div class="btn-sett" data-toggle="modal" data-target="#my-modal">
                         </div>
                         <div class="modal-footer">
